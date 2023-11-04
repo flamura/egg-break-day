@@ -8,8 +8,10 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
+import { ArcoResolver } from 'unplugin-vue-components/resolvers'
 
 export default defineConfig({
+  base: '/egg-break-day',
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
@@ -44,11 +46,17 @@ export default defineConfig({
         './src/composables',
       ],
       vueTemplate: true,
+      resolvers: [ArcoResolver()],
     }),
 
     // https://github.com/antfu/vite-plugin-components
     Components({
       dts: true,
+      resolvers: [
+        ArcoResolver({
+          sideEffect: true,
+        }),
+      ],
     }),
 
     // https://github.com/antfu/unocss

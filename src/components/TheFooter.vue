@@ -1,15 +1,18 @@
 <template>
-  <nav mt-6 inline-flex gap-2 text-xl>
-    <button icon-btn @click="toggleDark()">
-      <div i-carbon-sun dark:i-carbon-moon />
-    </button>
-
+  <nav grid grid-flow-col mt-6 gap-4 text-xl>
+    <a
+      i-mdi-mastodon icon-btn
+      rel="noreferrer"
+      href="https://bgme.me/@halcyon"
+      target="_blank"
+      title="在象上联系我"
+    />
     <a
       i-carbon-logo-github icon-btn
       rel="noreferrer"
-      href="https://github.com/antfu/vitesse-lite"
+      href="https://github.com/flamura/egg-break-day"
       target="_blank"
-      title="GitHub"
+      title="或许你对项目的代码感兴趣呢"
     />
   </nav>
 </template>
