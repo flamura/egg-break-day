@@ -72,7 +72,7 @@ function showResult() {
           </span>
         </div>
         <div>
-          距离下个生日还有{{ result.dayToNextBirthday }}天
+          距离下次生日还有{{ result.dayToNextBirthday }}天
         </div>
       </div>
       <div class="extra">
