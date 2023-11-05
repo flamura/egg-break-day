@@ -30,6 +30,7 @@ function logic(input: dayjs.Dayjs) {
 
   return { isAfter, isBirthday, dayToNextBirthday, dayAfterLastBirthday, livingYears, livingDays, livingDayRemainder, yearLivingFra }
 }
+
 const result = ref(null)
 
 function showResult() {
@@ -47,8 +48,8 @@ function showResult() {
     </section>
     <div class="mt-8 flex items-center">
       <!-- 好吧这个组件还挺好用的 -->
-      <a-date-picker v-model="userBirthday" class="" size="large" :allow-clear="false" />
-      <a-button type="primary" class="btn-operate ml-4" @click="showResult">
+      <a-date-picker v-model="userBirthday" class="picker mr-4" size="large" :allow-clear="false" />
+      <a-button type="primary" class="btn-operate" @click="showResult">
         <template #icon>
           <div i-mdi-calculator-variant-outline icon-btn />
         </template>
@@ -57,30 +58,34 @@ function showResult() {
         </template>
       </a-button>
     </div>
-    <div v-if="result" class="mt-8">
+    <div v-if="result" class="mt-8 text-base">
       <div v-if="!result.isAfter" class="common">
         <div>
-          已经来到这个世界{{ result.livingDays }}天了呢
+          已经来到这个世界{{ result.livingDays }}天了
         </div>
         <div>
-          这<span v-if="result.livingYears">{{ result.livingYears }}年</span><span v-if="result.livingDayRemainder"> {{
-            result.livingDayRemainder }}天</span><span v-if="result.livingDayRemainder">（{{ result.yearLivingFra }}年）</span>辛苦啦
+          也可以算作【<span><span v-if="result.livingYears">{{ result.livingYears }}年</span><span
+            v-if="result.livingDayRemainder"
+          > {{
+            result.livingDayRemainder }}天</span>】<span v-if="result.livingDayRemainder">或者【{{ result.yearLivingFra
+          }}年】</span>
+          </span>
         </div>
         <div>
-          距离下个破蛋日还有{{ result.dayToNextBirthday }}天哦
+          距离下个生日还有{{ result.dayToNextBirthday }}天
         </div>
       </div>
       <div class="extra">
         <div v-if="result.isBirthday && result.livingYears > 0">
-          祝你破蛋日过得开心🎂
+          🎂祝你今天生日快乐~
         </div>
         <div v-if="result.isAfter">
-          我超未来人，可以私信告诉我下期双色球编号吗o3o
+          我超未来人，可以告诉我下期双色球编号吗o3o
         </div>
       </div>
     </div>
-    <div v-else class="mt-8">
-      <div>↑或许这里可以填进破蛋日↑</div>
+    <div v-else class="mt-8 text-base">
+      <div>或许↑这里↑可以填入生日</div>
     </div>
 
     <div py-8 />

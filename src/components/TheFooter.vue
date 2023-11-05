@@ -5,14 +5,14 @@
       rel="noreferrer"
       href="https://bgme.me/@halcyon"
       target="_blank"
-      title="在象上联系我"
+      title="在象上找到我"
     />
     <a
       i-carbon-logo-github icon-btn
       rel="noreferrer"
       href="https://github.com/flamura/egg-break-day"
       target="_blank"
-      title="或许你对项目的代码感兴趣呢"
+      title="查询土制程度"
     />
   </nav>
 </template>
