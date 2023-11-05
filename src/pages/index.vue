@@ -43,7 +43,7 @@ function showResult() {
   <div>
     <section class="title">
       <h1 text-2xl op90>
-        <div class="i-iconoir-birthday-cake mr-2 inline-block text-4xl -mb-2" />土制活了几天计算器
+        <div class="i-iconoir-birthday-cake mr-2 inline-block text-4xl -mb-2" />活了几天计算器<span ml-2 text-base op50>土制版</span>
       </h1>
     </section>
     <div class="mt-8 flex items-center">
